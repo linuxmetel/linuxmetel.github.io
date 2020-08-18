@@ -4,16 +4,20 @@
 <meta charset="utf-8"/>
 </head>
 <body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
-<form name="form" id="form">
-<input type="text" name="text" placeholder="text">
-<input type="text" name="pwd" placeholder="pwd">
+<form id="form" name="test_form" onsubmit="return check();">
+<input type="text" name="text" placeholder="text" id="textb">
+<input type="text" name="pwd" placeholder="pwd" id="pwdb">
+<input type="submit" value="送信" >
 </form>
 <script>
-var text = $('#form [name=text]').val();
-var pwd = $('#form [name=pwd]').val();
+function check(){
+var text = $('#textb').val();
+var pwd = $('#pwdb').val();
 var word = CryptoJS.AES.encrypt(text, pwd).toString();
-docment.write(word)
+document.write(word);
+}
 </script>
 </body>
 </html>
