@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-</head>
-<body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
-<textarea name="textarea" cols="50" rows="5" placeholder="暗号化するテキスト" id="textb"></textarea>
-<input type="text" name="pwd" placeholder="パスワード" id="pwdb">
-<input type="button" id="btn1" value="暗号化" onclick="btn1Click();" />
-<br /><br />
-<textarea name="textarea" cols="50" rows="5" placeholder="結果" id="kekka"></textarea>
-<script>
-var btn1Click = function() {
-var text = $('#textb').val();
-var pwd = $('#pwdb').val();
-var word = CryptoJS.AES.encrypt(text, pwd).toString();
-$('#kekka').val(word);
-};
-</script>
-</body>
+  <head>
+    <meta charset="utf-8"/>
+    <title>暗号化</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+    <textarea name="textarea" cols="50" rows="5" placeholder="暗号化するテキスト" id="textb"></textarea>
+    <input type="text" name="pwd" placeholder="パスワード" id="pwdb">
+    <input type="button" id="btn1" value="暗号化" onclick="btn1Click();" />
+    <br /><br />
+    <textarea name="textarea" cols="50" rows="5" placeholder="結果" id="kekka"></textarea>
+    <script>
+      var btn1Click = function() {
+          var text = $('#textb').val();
+          var pwd = $('#pwdb').val();
+          var word = CryptoJS.AES.encrypt(text, pwd).toString();
+          $('#kekka').val(word);
+      };
+    </script>
+    <br />
+    <a href="decyrpt.html">復号化はこちら</a>
+    <br />
+    <a href="/">Linuxmetel Web</a>
+  </body>
 </html>
 
 
